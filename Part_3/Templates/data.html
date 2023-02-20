@@ -1,0 +1,54 @@
+{% block content %}
+<style>
+    td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+</style>
+<tr>
+    <th>Name</th>
+    <th>Organization</th>
+</tr>
+{% if result == 'game' %}
+<table>
+    <tr>
+        <th>{{request.form.get('Name')}}</th>
+        <th>UNCC Game Developers</th>
+    </tr>
+</table>
+{% elif result == 'drama' %}
+<table>
+    <tr>
+        <th>{{request.form.get('Name')}}</th>
+        <th>Theater Club</th>
+    </tr>
+</table>
+{% elif result == 'hack' %}
+<table>
+    <tr>
+        <th>{{request.form.get('Name')}}</th>
+        <th>Charlotte Hackers</th>
+    </tr>
+</table>
+{% elif result == 'run' %}
+<table>
+    <tr>
+        <th>{{request.form.get('Name')}}</th>
+        <th>Running Club</th>
+    </tr>
+</table>
+{% elif result == 'cook' %}
+<table>
+    <tr>
+        <th>{{request.form.get('Name')}}</th>
+        <th>Culinary Club</th>
+    </tr>
+</table>
+{% else %}
+<p>That is not a valid organization. Try again.</p>
+{% endif %}
+<nav>
+    <a href = "/form">Register</a>
+</nav>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% block content %}
+{% if result == 'even' %}
+    <p>{{request.form.get('Number')}} is even</p>
+{% elif result == 'odd' %}
+    <p>{{request.form.get('Number')}} is odd</p>
+{% else %}
+    <p>{{request.form.get('Number')}} is not an integer</p>
+{% endif %}
+<nav>
+    <a href = "/form">Back</a>
+</nav>
+{% endblock %}
